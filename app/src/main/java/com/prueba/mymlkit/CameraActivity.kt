@@ -1,5 +1,6 @@
 package com.prueba.mymlkit
 
+import android.content.Intent
 import android.net.Uri
 import android.util.Log
 import android.widget.Toast
@@ -14,7 +15,7 @@ import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
-class MainActivity : BaseCameraActivity(R.layout.activity_main) {
+class CameraActivity : BaseCameraActivity(R.layout.activity_main) {
 
     override fun takePhoto() {
         val imageCapture = imageCapture ?: return
@@ -41,6 +42,8 @@ class MainActivity : BaseCameraActivity(R.layout.activity_main) {
                     val msg = "Photo capture succeeded: $savedUri"
                     Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
                     Log.d(TAG, msg)
+
+                    returnResult(savedUri)
                 }
             })
     }
@@ -81,4 +84,16 @@ class MainActivity : BaseCameraActivity(R.layout.activity_main) {
     }
 
 
+    private fun returnResult(uri: Uri) {
+        val intent = Intent().apply {
+            putExtra(URI_RESULT, uri.toString())
+        }
+        setResult(REQUEST_CODE,intent)
+        finish()
+    }
+
+    companion object {
+        const val URI_RESULT = "URI_RESULT"
+        const val REQUEST_CODE = 2
+    }
 }
