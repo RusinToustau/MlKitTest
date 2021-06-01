@@ -15,10 +15,8 @@ class ImageAnalyzer(private val listener: Listener) : ImageAnalysis.Analyzer {
 
     @ExperimentalGetImage
     override fun analyze(imageProxy: ImageProxy) {
-        val mediaImage = imageProxy.image
-        if (mediaImage != null) {
+        imageProxy.image?.let { mediaImage ->
             val image = InputImage.fromMediaImage(mediaImage, imageProxy.imageInfo.rotationDegrees)
-
             textRecognition(image)
         }
     }

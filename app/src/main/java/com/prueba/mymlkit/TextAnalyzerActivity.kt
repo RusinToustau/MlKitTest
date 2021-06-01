@@ -38,16 +38,14 @@ class TextAnalyzerActivity : AppCompatActivity(R.layout.activity_text_analyzer),
 
     @SuppressLint("UnsafeOptInUsageError")
     private fun showImage(imageUri: Uri) {
-        val image = InputImageWrapper.imageFromPath(this, imageUri)
-        imageView.setImageBitmap(image?.bitmapInternal)
-        image?.let {
+        InputImageWrapper.imageFromPath(this, imageUri)?.let { image ->
+            imageView.setImageBitmap(image.bitmapInternal)
             imageAnalyzer.textRecognition(image)
         }
     }
 
     override fun onSuccessListener(visionText: Text) {
-        var text = visionText.text
-        textView.text = text
+        textView.text = visionText.text
     }
 
     override fun onFailureListener(e: Exception) {
