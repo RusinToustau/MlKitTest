@@ -33,18 +33,18 @@ ML Kit es un SDK desarrollado por Google de aprendizaje automático disponible p
 <img width="1082" alt="Captura de pantalla 2021-05-31 a la(s) 21 57 46" src="https://user-images.githubusercontent.com/28780954/120401830-29ed1700-c317-11eb-8409-f4cc0b33272c.png">
 
 
-##Funciona sin conexión ?
+### Funciona sin conexión ?
 
 Todas las API de ML Kit se ejecutan en el dispositivo, lo que permite casos de uso en tiempo real en los que desea procesar una transmisión de cámara en vivo, por ejemplo. Esto también significa que la funcionalidad está disponible sin conexión.
 
 
-##Cuales son las APIs disponibles ?
+### Cuales son las APIs disponibles ?
 
 Explore las API listas para usar: reconocimiento de texto , detección de rostros , escaneo de códigos de barras , etiquetado de imágenes , detección y seguimiento de objetos , detección de poses , segmentación de selfies , respuesta inteligente , traducción de texto e identificación de idioma .
 
 
 
-##Cómo usar esta Librería ?
+### Cómo usar esta Librería ?
 
 -  Paso 1: Crea un proyecto de Firebase
 -  Paso 2: Registra tu app con Firebase
@@ -58,7 +58,7 @@ Explore las API listas para usar: reconocimiento de texto , detección de rostro
 <img width="431" alt="Captura de pantalla 2021-06-01 a la(s) 20 28 42" src="https://user-images.githubusercontent.com/28780954/120402219-05456f00-c318-11eb-9385-33a26a468105.png">
 
 
-## Agrega Firebase ML a nuestra app
+### Agrega Firebase ML a nuestra app
 
 ````
     //build.gradle (project-level)        
@@ -83,7 +83,7 @@ Explore las API listas para usar: reconocimiento de texto , detección de rostro
 
 ````
     
-## Reconocimiento de Textos
+### Reconocimiento de Textos
 
 ````
 val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
